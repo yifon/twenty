@@ -1,0 +1,31 @@
+{
+  "name": "zero-user",
+  "version": "0.0.19",
+  "keywords": [
+    "zero module"
+  ],
+  "description": "Provide you a full pack of user system.",
+  "zero": {
+    "dependencies": {
+      "request": "^0.0.1",
+      "bus": "^0.0.1",
+      "model": "^0.0.1",
+      "session": "^0.0.1",
+      "rest": "^0.0.1",
+      "logger": "^0.0.1",
+      "security": "^0.0.1"
+    },
+    "name": "user"
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "# zero-user #\n\nProvide you a full pack of user system.\n\n## Usage ##\n\n1. Add dependency to your module package.json file like:\n\n```\n{\n\t\"name\" : \"YOUR_MODULE_NAME\",\n\t\"zero\" : {\n\t\t\"dependencies\" : {\n\t\t\t\"user\" : \"^0.0.1\"\n\t\t}\n\t}\n}\n```\n\n3. Now `POST /user/register`, `POST /user/login`, `POST /user/logout` can be visited. In server side, simply use req.session.user to get current user.",
+  "readmeFilename": "README.md",
+  "_id": "zero-user@0.0.19",
+  "dist": {
+    "shasum": "2e824b1cc55b37ea99ffc9cea099fa7b0318ab57"
+  },
+  "_from": "zero-user@",
+  "_resolved": "https://registry.npmjs.org/zero-user/-/zero-user-0.0.19.tgz"
+}

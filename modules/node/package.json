@@ -1,0 +1,31 @@
+{
+  "name": "zero-node",
+  "version": "0.0.12",
+  "keywords": [
+    "zero module"
+  ],
+  "description": "This module helps you deal with models used in blog or other CMS easily.",
+  "dependencies": {
+    "markdown": "^0.5.0"
+  },
+  "zero": {
+    "dependencies": {
+      "request": "^0.0.1",
+      "model": "^0.0.1",
+      "configure": "^0.0.1",
+      "bus": "^0.0.1"
+    },
+    "name": "node"
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "# zero-node #\n\nThis module helps you deal with models used in blog or other CMS easily.\n\n## Usage ##\n\n1. Add dependency to your module package.json file like:\n\n```\n{\n\t\"name\" : \"YOUR_MODULE_NAME\",\n\t\"zero\" : {\n\t\t\"dependencies\" : {\n\t\t\t\"node\" : \"^0.0.1\"\n\t\t}\n\t}\n}\n```\n\n2. Declare `isNode` in module.exports like:\n\n```\nmodule.exports = {\n\tmodels : [{\n       identity : \"post\",\n       isNode : true\n    }]\n}\n```\n\n3. Node module will generate brief for node content, you can specify its behavior through global configs:\n\n```\n{\n\t\"node\" : {\n\t\tauto : true,  //auto generate brief for node model\n\t\tfield : 'content', //the key of node content to brief\n\t\ttoField : 'brief', //which field to save brief\n\t\tlimit : 300, //brief length\n\t\texclude : [], //model in this array do not need briefing\n\t}\n}\n```\n\n4. Node will add an extra `count` route for every node model. For example you declared a `post` node. So there will be a route as `http://localhost/post/count` will returns the amount of post.\n\n",
+  "readmeFilename": "README.md",
+  "_id": "zero-node@0.0.12",
+  "dist": {
+    "shasum": "646edf0e3edb011c0959986ead410828d7f647d4"
+  },
+  "_from": "zero-node@",
+  "_resolved": "https://registry.npmjs.org/zero-node/-/zero-node-0.0.12.tgz"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "zero-index",
+  "version": "0.0.9",
+  "description": "zero module",
+  "zero": {
+    "dependencies": {
+      "model": "^0.0.1",
+      "bus": "^0.0.1"
+    },
+    "name": "index"
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "zero-index@0.0.9",
+  "dist": {
+    "shasum": "e20c2217b857834dfa0a4015604b79017bce45df"
+  },
+  "_from": "zero-index@",
+  "_resolved": "https://registry.npmjs.org/zero-index/-/zero-index-0.0.9.tgz"
+}

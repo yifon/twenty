@@ -1,0 +1,27 @@
+{
+  "name": "zero-rbac",
+  "version": "0.0.11",
+  "keywords": [
+    "zero module"
+  ],
+  "description": "This module implement role based access control.",
+  "zero": {
+    "dependencies": {
+      "request": "^0.0.1",
+      "bus": "^0.0.1",
+      "model": "^0.0.1"
+    },
+    "name": "rbac"
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "# zero-rbac #\n\nThis module implement role based access control.\n\n## Usage ##\n\n1. Add dependency to your module package.json file like:\n\n```\n{\n\t\"name\" : \"YOUR_MODULE_NAME\",\n\t\"zero\" : {\n\t\t\"dependencies\" : {\n\t\t\t\"rbac\" : \"^0.0.1\"\n\t\t}\n\t}\n}\n```\n\n2. Declare `acl` in module.exports like:\n\n```\nmodule.exports = {\n\tacl : {\n\t\troles : {\n\t\t\t\"loggedIn\" : function(req){\n\t\t\t\tif( req.session.user.id ) return true\n\t\t\t}\n\t\t},\n\t\troutes : {\n\t\t\t\"GET /admin\" : [{\n\t\t\t\trole : \"loggedIn\",\n\t\t\t\tredirect : \"/login\"\n\t\t\t}]\n\t\t}\n    }\n}\n```\n\nRbac module will apply roles in you definition to every request, If you want to grant a permanent role to a user, you can simply store it in database's user collection.\nIf you don't require redirecting after access failed, you can simply use:\n\n```\nmodule.exports = {\n\tacl : {\n\t\troles : {\n\t\t\t\"loggedIn\" : function(req){\n\t\t\t\tif( req.session.user.id ) return true\n\t\t\t}\n\t\t},\n\t\troutes : {\n\t\t\t\"GET /admin\" : ['loggedIn']\n\t\t}\n    }\n}\n```",
+  "readmeFilename": "README.md",
+  "_id": "zero-rbac@0.0.11",
+  "dist": {
+    "shasum": "258d2d1dd37d53416e1ee0fdfb9e74ffd86197cd"
+  },
+  "_from": "zero-rbac@",
+  "_resolved": "https://registry.npmjs.org/zero-rbac/-/zero-rbac-0.0.11.tgz"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "zero-model",
+  "version": "0.0.19",
+  "keywords": [
+    "zero module"
+  ],
+  "description": "This module use [waterline](https://github.com/balderdashy/waterline) to create database connection for relier module.",
+  "zero": {
+    "dependencies": {
+      "bus": "^0.0.1",
+      "logger": "^0.0.1"
+    },
+    "name": "model"
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "# zero-model #\n\nThis module use [waterline](https://github.com/balderdashy/waterline) to create database connection for relier module.\n\n## Usage ##\n\n1. Add dependency to your module package.json file like:\n\n```\n{\n\t\"name\" : \"YOUR_MODULE_NAME\",\n\t\"zero\" : {\n\t\t\"dependencies\" : {\n\t\t\t\"model\" : \"^0.0.1\"\n\t\t}\n\t}\n}\n```\n\n2. Declare `models` in module.exports like:\n\n```\nmodule.exports = {\n\tmodels : [{\n\t\tidentity : \"user\",\n\t\tattributes : {\n\t\t\tname : \"string\",\n\t\t\tage : \"int\"\n\t\t}\n\t}]\n}\n```\n\nSee more details about model definition in [waterline doc](https://github.com/balderdashy/waterline-doc).\n\n3. Model module listen events of `create`, `update`, `destroy`, `find` and `findOne` for every defined model. You can use it as below:\n\n```\nbus.fire('user.findOne',{id:1}).then(function( findResult ){\n\t// Because there may be other listeners on 'user.findOne', so we have to retrieve result with key \"model.findOne.user\"\n\tvar foundUser = findResult['model.findOne.user']\n})\n```\n\nIf you want to use waterline's native method, you can use it through your module's magic attribute `dep` like:\n\n```\nmodule.exports = {\n\tsomeAction : function(){\n\t\tthis.dep.model.findOne('user',{id:1}).then(function(user){\n\t\t\t//notice the difference from using `bus.fire`\n\t\t\tvar foundUser = user\n\t\t})\n\t}\n}\n```\n\n\n",
+  "readmeFilename": "README.md",
+  "_id": "zero-model@0.0.19",
+  "dist": {
+    "shasum": "783a96e61d1b728b01c9ca0115e44e691a218451"
+  },
+  "_from": "zero-model@",
+  "_resolved": "https://registry.npmjs.org/zero-model/-/zero-model-0.0.19.tgz"
+}

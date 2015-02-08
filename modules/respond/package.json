@@ -1,0 +1,28 @@
+{
+  "name": "zero-respond",
+  "version": "0.0.13",
+  "keywords": [
+    "zero module"
+  ],
+  "description": "This module handles respond of request when you use bus in your request handler.",
+  "zero": {
+    "dependencies": {
+      "request": "^0.0.1",
+      "model": "^0.0.1",
+      "bus": "^0.0.1",
+      "logger": "^0.0.1"
+    },
+    "name": "respond"
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "# zero-respond #\n\nThis module handles responding of request when you are using `bus` in your request handler.\n\n## Usage ##\n\n1. Add dependency to your module package.json file like:\n\n```\n{\n\t\"name\" : \"YOUR_MODULE_NAME\",\n\t\"zero\" : {\n\t\t\"dependencies\" : {\n\t\t\t\"respond\" : \"^0.0.1\"\n\t\t}\n\t}\n}\n```\n\n2. Set bus data named `respond` in your request' bus.\nRespond module adds a router handler which will always be called at last of every request,\nand read from data of bus to decide what to respond. Codes for more detail :\n\n```\nmodule.exports = {\n    route : {\n        \"GET /anyRoute\" : function( req, res){\n            //bus.fcall() fires two event automatically, one before and one after your main business logic\n            //In this case, it fires `someEvent.before` and `someEvent.after`\n            req.bus.fcall(\"someEvent\", arg1, arg2, function(){\n                //deal what you want to do\n\n                //respond module handlers 3 type of output, `data`, `file` and `page`. Which to output depend on your bus data.\n\n                //1.Output data as json.\n                req.bus.data(\"respond.data\",{\"key\":\"value})\n\n                //2.Render page with data, and output html as result.\n                req.bus.data(\"respond.data\", DATA_FOR_PAGE_RENDERING)\n                req.bus.data(\"respond.page\", TEMPLATE_LOCATION)\n\n                //3. Send file to client\n                req.bus.data(\"respond.fire\", FILE_LOCATION)\n            })\n        }\n    }\n}\n```\n\nWe strongly suggest you to use respond module to handle respond for you rather then using `res` in you request handler,\nbecause in this way other modules can modify or inject data to output easily.\nPlus, all data modification can be traced and nicely shown by dev tool.\n",
+  "readmeFilename": "README.md",
+  "_id": "zero-respond@0.0.13",
+  "dist": {
+    "shasum": "a9e4af6d016fc146501688dbf63c2c9e93120a9f"
+  },
+  "_from": "zero-respond@",
+  "_resolved": "https://registry.npmjs.org/zero-respond/-/zero-respond-0.0.13.tgz"
+}

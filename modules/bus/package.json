@@ -1,0 +1,22 @@
+{
+  "name": "zero-bus",
+  "version": "0.0.13",
+  "keywords": [
+    "zero module"
+  ],
+  "description": "There is super event emitter class named `Bus` in zero core. This module will create  `bus` instance and attach it to every request instance. You can use it via `req.bus`.",
+  "zero": {
+    "dependencies": {}
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "# zero-bus #\n\nThere is a super event emitter class named `Bus` in zero core.\nThis module will create a `Bus` instance and attach it to every request instance. You can use it via `req.bus`.\n\n## Usage ##\n\n1. Add dependency to your module package.json file like:\n\n```\n{\n\t\"name\" : \"YOUR_MODULE_NAME\",\n\t\"zero\" : {\n\t\t\"dependencies\" : {\n\t\t\t\"bus\" : \"^0.0.1\"\n\t\t}\n\t}\n}\n```\n\n2. Declare the event you want to listen in module.exports like:\n\n```\nmodule.exports = {\n\tlisten : {\n       'someEvent' : function eventHandler(/*arguments of fired event*/){\n\n       }\n    }\n}\n```\n\n3. Or you can use it in router handler like code below, don't forget declare module dependency in package.json first.\n\n```\nmodule.exports = {\n\troute ： {\n\t\t'/route/:param' : function(req){\n\t\t\treq.bus.fire('someEvent', arg1, arg2)\n\t\t}\n\t}\n}\n```\n\n## Advanced Usage ##\n\n### Ordering listeners ###\n\nYou can specify the fire order of all listeners on certain event using:\n\n```\nbus.on({\n\t\"event\":'someEvent',\n\t\"function\":function handlerName(){},\n\t\"module\":\"otherModule\"\n})\n\nbus.on({\n\t\"event\":'someEvent',\n\t\"function\":function handler(){},\n\t\"order\":{before:\"otherModule.handlerName\"}, //make this handler triggered before the one above\n\t\"module\":\"someModule\"\n})\n```\n\n### sharing data through bus ###\n\nYou can use `bus.data()` to store and retrieve data.\n\n```\nbus.data('user',{id:1,name:'zero'}) //set data\nbus.data('user') //retrieve data\n\n//advanced usage\nbus.data('user.id',2) //this will set the id of the object named `user` to 2, instead of creating a new piece of data named 'user.id'.\n```\n\n\n### keeping trace stack of event ###\n\nAs you may know, bus can trace event stack in debug mode, but there are some basic rules you need to know first:\n\n - If you fired another event synchronously(such as in a promise) in your event handler, you need to return a promise that holds the result of the event you fired. Mostly simply return `bus.fire('someEvent')`( the return value of bus.fire() is a promise) would just work. \n \n - Returning `bus.error()` will stop all event processing immediately.\n - Handlers on same event run `synchronously`, which means if you are doing something synchronously( such as connecting database ) in a event handler, other handlers attached on the same event won't wait, unless you return a promise with attribute `block` set to `true`.\n\n",
+  "readmeFilename": "README.md",
+  "_id": "zero-bus@0.0.13",
+  "dist": {
+    "shasum": "f55d435324e41c05097b464dcd7d3f8d2df0485d"
+  },
+  "_from": "zero-bus@",
+  "_resolved": "https://registry.npmjs.org/zero-bus/-/zero-bus-0.0.13.tgz"
+}

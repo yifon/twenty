@@ -1,0 +1,25 @@
+{
+  "name": "zero-request",
+  "version": "0.0.13",
+  "keywords": [
+    "zero module"
+  ],
+  "description": "Provide enhanced express router functions for relier module.",
+  "zero": {
+    "dependencies": {
+      "bus": "^0.0.1"
+    },
+    "name": "request"
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "# zero-request #\n\nProvide enhanced express router functionality for relier module.\n\n## Usage ##\n\n1. Add dependency to your module package.json file like:\n\n```\n{\n\t\"name\" : \"YOUR_MODULE_NAME\",\n\t\"zero\" : {\n\t\t\"dependencies\" : {\n\t\t\t\"request\" : \"^0.0.1\"\n\t\t}\n\t}\n}\n```\n\n2. Declare `route` in model definition like:\n\n```\nmodule.exports = {\n    route : {\n        \"GET /anyUrl\" : function( req, res){\n            //use it just like express router\n        },\n        \"GET /runInOrderUrl\" : {\n            \"function\" : function functionName(req, res){\n                //this handler will run before otherModule.otherFunctionName\n            },\n            \"order\" : {\n                before : \"otherModule.otherFunctionName\"\n            }\n        },\n        \"GET /fireEvent\" : function (req, res){\n            //with bus module loaded, you can use req.bus to fire event\n            req.bus.fire(\"someEvent\")\n        },\n        \"GET /fcall\" : function( req, res){\n            //bus.fcall will help you fire event before and after your main business logic\n            req.bus.fcall(\"someEvent\", arg1, arg2, function(){\n                //deal what you want to do\n            })\n        }\n    }\n}\n```\n\nWe strongly suggest you to use `bus.fire` or `bus.fcall` to trigger the action you want, this will decouple your system in an elegant way.\nKnow more a about [bus](http://github.com/sskyy/zero-bus).\n",
+  "readmeFilename": "README.md",
+  "_id": "zero-request@0.0.13",
+  "dist": {
+    "shasum": "45f076578c6bb0ec8cf0bcd0f1d76a90b4646306"
+  },
+  "_from": "zero-request@",
+  "_resolved": "https://registry.npmjs.org/zero-request/-/zero-request-0.0.13.tgz"
+}

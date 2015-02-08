@@ -1,0 +1,26 @@
+{
+  "name": "zero-file",
+  "version": "0.0.8",
+  "keywords": [
+    "zero module"
+  ],
+  "description": "This module allow you to upload file through model create api. Notice you need install model module first.",
+  "zero": {
+    "dependencies": {
+      "request": "^0.0.1",
+      "model": "^0.0.1"
+    },
+    "name": "file"
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "# zero-file #\n\nThis module allow you to upload file through model create api. Notice you need install model module first.\n\n## Usage ##\n\n1. Add dependency to your module package.json file like:\n\n```\n{\n\t\"name\" : \"YOUR_MODULE_NAME\",\n\t\"zero\" : {\n\t\t\"dependencies\" : {\n\t\t\t\"file\" : \"^0.0.1\"\n\t\t}\n\t}\n}\n```\n\n2. Declare `isFile` in module.exports like:\n\n```\nmodule.exports = {\n\tmodels : [{\n       'identity' : 'avatar',\n       isFile : true\n    }]\n}\n```\n\n",
+  "readmeFilename": "README.md",
+  "_id": "zero-file@0.0.8",
+  "dist": {
+    "shasum": "fc17d561cd7535930b0ebe87b77657a8247c0dff"
+  },
+  "_from": "zero-file@",
+  "_resolved": "https://registry.npmjs.org/zero-file/-/zero-file-0.0.8.tgz"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "zero-statics",
+  "version": "0.0.8",
+  "keywords": [
+    "zero module"
+  ],
+  "description": "Provide express' static middleware function.",
+  "zero": {
+    "dependencies": {},
+    "name": "statics"
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "# zero-statics #\n\nProvide express' static middleware function.\n\n## Usage ##\n\n1. Add dependency to your module package.json file like:\n\n```\n{\n\t\"name\" : \"YOUR_MODULE_NAME\",\n\t\"zero\" : {\n\t\t\"dependencies\" : {\n\t\t\t\"statics\" : \"^0.0.1\"\n\t\t}\n\t}\n}\n```\n\n2. declare `static` in your module :\n\n```\n{\n\tstatics : [{\n\t\t'url_prefix' : FILE_PATH\n\t}]\n}\n```\n",
+  "readmeFilename": "README.md",
+  "_id": "zero-statics@0.0.8",
+  "dist": {
+    "shasum": "8189ba17f37d7be3f660a09e363bdf0e789205b7"
+  },
+  "_from": "zero-statics@",
+  "_resolved": "https://registry.npmjs.org/zero-statics/-/zero-statics-0.0.8.tgz"
+}

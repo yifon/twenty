@@ -1,0 +1,28 @@
+{
+  "name": "zero-security",
+  "version": "0.0.7",
+  "keywords": [
+    "zero module"
+  ],
+  "description": "This module secure relier's model with varied strategies.",
+  "dependencies": {
+    "xss": "^0.1.12"
+  },
+  "zero": {
+    "dependencies": {
+      "configure": "^0.0.1",
+      "bus": "^0.0.1"
+    }
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "# zero-security #\n\nThis module secure relier's model with varied strategies.\n\n## Usage ##\n\n1. Add dependency to your module package.json file like:\n\n```\n{\n\t\"name\" : \"YOUR_MODULE_NAME\",\n\t\"zero\" : {\n\t\t\"dependencies\" : {\n\t\t\t\"security\" : \"^0.0.1\"\n\t\t}\n\t}\n}\n```\n\n2. make your model as:\n\n```\nmodule.models = [{\n    identity : 'post',\n    attributes : {\n    \tcontent : 'string'\n    },\n    security : {\n        \"content\" : ['xss']\n\t}\n},{\n    identity : 'user',\n    attributes : {\n    \tpassword : 'string'\n    },\n    security : {\n\t\t\"password\" : ['password']\n\t}\n}]\n```\n\n3. Current supported secure strategies: `xss`, `encryptPermanent`, `password`.\n\n",
+  "readmeFilename": "README.md",
+  "_id": "zero-security@0.0.7",
+  "dist": {
+    "shasum": "e7934e635bb79a51c8beb0180245355102a7db86"
+  },
+  "_from": "zero-security@",
+  "_resolved": "https://registry.npmjs.org/zero-security/-/zero-security-0.0.7.tgz"
+}

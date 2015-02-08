@@ -1,0 +1,25 @@
+{
+  "name": "zero-configure",
+  "version": "0.0.8",
+  "keywords": [
+    "zero module"
+  ],
+  "description": "This module allow you use a config.json file to overwrite module's config which declared the dependency of this module.",
+  "zero": {
+    "dependencies": {
+      "request": "^0.0.1"
+    },
+    "name": "configure"
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "# zero-configure #\n\nThis module allow you use a config.json file to overwrite module's config which declared the dependency of this module.\n\n## Usage ##\n\n1. Add dependency to your module package.json file like:\n\n```\n{\n\t\"name\" : \"YOUR_MODULE_NAME\",\n\t\"zero\" : {\n\t\t\"dependencies\" : {\n\t\t\t\"configure\" : \"^0.0.1\"\n\t\t}\n\t}\n}\n```\n\n2. Declare `config` in module.exports like:\n\n```\nmodule.exports = {\n\tconfig : {\n       'allowSomething' : true\n    }\n}\n```\n\nIf you have a global config file in root of application, and it looks like:\n\n```\n{\n\t\"THIS_MODULE_NAME\" : {\n\t\t'allowSomething' : false\n\t}\n}\n```\n\nThen it will overwrite the config's `allowSomething` in this module.\n\n\n",
+  "readmeFilename": "README.md",
+  "_id": "zero-configure@0.0.8",
+  "dist": {
+    "shasum": "7ee624a2ccb295cdcddac35263dca00f9afd98eb"
+  },
+  "_from": "zero-configure@",
+  "_resolved": "https://registry.npmjs.org/zero-configure/-/zero-configure-0.0.8.tgz"
+}

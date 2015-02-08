@@ -1,0 +1,39 @@
+{
+  "name": "zero-twenty",
+  "version": "0.0.17",
+  "description": "zero module",
+  "dependencies": {
+    "xss": "^0.1.12"
+  },
+  "zero": {
+    "dependencies": {
+      "file": "^0.0.1",
+      "bus": "^0.0.1",
+      "request": "^0.0.1",
+      "index": "^0.0.1",
+      "node": "^0.0.1",
+      "model": "^0.0.1",
+      "rest": "^0.0.1",
+      "theme": "^0.0.1",
+      "configure": "^0.0.1",
+      "rbac": "^0.0.1",
+      "user": "^0.0.1",
+      "statistic": "^0.0.1",
+      "security": "^0.0.1"
+    },
+    "configs": [
+      "./config.js"
+    ],
+    "name": "twenty"
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "zero-twenty@0.0.17",
+  "dist": {
+    "shasum": "c7323704390315e848d728ac6e9ca2e8be7cf2ff"
+  },
+  "_from": "zero-twenty@",
+  "_resolved": "https://registry.npmjs.org/zero-twenty/-/zero-twenty-0.0.17.tgz"
+}

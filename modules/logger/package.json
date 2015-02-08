@@ -1,0 +1,18 @@
+{
+  "name": "zero-logger",
+  "version": "0.0.6",
+  "description": "zero module",
+  "zero": {
+    "dependencies": {}
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "zero-logger@0.0.6",
+  "dist": {
+    "shasum": "66de26a4172c27c9aeac84c339c76beed91103c2"
+  },
+  "_from": "zero-logger@",
+  "_resolved": "https://registry.npmjs.org/zero-logger/-/zero-logger-0.0.6.tgz"
+}

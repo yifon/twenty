@@ -1,0 +1,29 @@
+{
+  "name": "zero-theme",
+  "version": "0.0.15",
+  "keywords": [
+    "zero module"
+  ],
+  "description": "This module help you make your own theme system.",
+  "zero": {
+    "dependencies": {
+      "request": "^0.0.1",
+      "statics": "^0.0.1",
+      "configure": "^0.0.1",
+      "logger": "^0.0.1",
+      "respond": "^0.0.1",
+      "model": "^0.0.1"
+    }
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "# zero-theme #\n\nThis module help you make your own theme system.\n\n## Usage ##\n\n1. Add dependency to your module package.json file like:\n\n```\n{\n\t\"name\" : \"YOUR_MODULE_NAME\",\n\t\"zero\" : {\n\t\t\"dependencies\" : {\n\t\t\t\"theme\" : \"^0.0.1\"\n\t\t}\n\t}\n}\n```\n\n2. declare `themes` in your module :\n\n```\n{\n\ttheme : [{\n        directory : \"admin\",\n        prefix : \"admin\", //match url /your_module_name/admin\n        locals : {}  //any locals attach to any page to render\n      }],\n}\n```\n\n3. Theme module will automatically render template file like `index.jade` as page and others common web resource as static files.\n",
+  "readmeFilename": "README.md",
+  "_id": "zero-theme@0.0.15",
+  "dist": {
+    "shasum": "62cf3ea5d50e562f2e72d2fef556db6cef839e17"
+  },
+  "_from": "zero-theme@",
+  "_resolved": "https://registry.npmjs.org/zero-theme/-/zero-theme-0.0.15.tgz"
+}

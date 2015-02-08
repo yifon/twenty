@@ -1,0 +1,30 @@
+{
+  "name": "zero-statistic",
+  "version": "0.0.12",
+  "keywords": [
+    "zero module"
+  ],
+  "description": "Log request or bus event to database.",
+  "zero": {
+    "dependencies": {
+      "request": "^0.0.1",
+      "model": "^0.0.1",
+      "bus": "^0.0.1",
+      "respond": "^0.0.1",
+      "logger": "^0.0.1",
+      "rest": "^0.0.1"
+    },
+    "name": "statistic"
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "# zero-statistics #\n\nLog request or bus event to database.\n\n## Usage ##\n\n1. Add dependency to your module package.json file like:\n\n```\n{\n\t\"name\" : \"YOUR_MODULE_NAME\",\n\t\"zero\" : {\n\t\t\"dependencies\" : {\n\t\t\t\"statistics\" : \"^0.0.1\"\n\t\t}\n\t}\n}\n```\n\n2. declare `statistics` in your module :\n\n```\nmodule.exports = {\n\tstatistics : {\n\t\tlog : {\n\t\t\t\"GET /post/*\" : \"daily\",\n\t\t\t\"rest.fire.after\" : {\n\t\t\t\tstrategy : \"feed\",\n\t\t\t\targv : [\"post\"]\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\n3. Simply visit `/statistic?type=GET /post/*-daily` to get results.\n",
+  "readmeFilename": "README.md",
+  "_id": "zero-statistic@0.0.12",
+  "dist": {
+    "shasum": "17ad7e34b55e8be0f39f91b877c3ad6eb48b5a0c"
+  },
+  "_from": "zero-statistic@",
+  "_resolved": "https://registry.npmjs.org/zero-statistic/-/zero-statistic-0.0.12.tgz"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "zero-session",
+  "version": "0.0.6",
+  "description": "zero module",
+  "dependencies": {
+    "cookie-session": "^1.1.0"
+  },
+  "zero": {
+    "dependencies": {}
+  },
+  "author": {
+    "name": "jiamiu"
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "zero-session@0.0.6",
+  "dist": {
+    "shasum": "509f1db4914629a5ee7599a55100f3c2bebb4f6b"
+  },
+  "_from": "zero-session@",
+  "_resolved": "https://registry.npmjs.org/zero-session/-/zero-session-0.0.6.tgz"
+}
