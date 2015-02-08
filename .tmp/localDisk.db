@@ -1,0 +1,208 @@
+{
+  "data": {
+    "role": [],
+    "rule": [],
+    "statistic": [
+      {
+        "key": "2015-01-22",
+        "type": "GET /*-dailyView",
+        "value": 227,
+        "createdAt": "2015-01-22T15:33:30.426Z",
+        "updatedAt": "2015-01-22T15:44:05.686Z",
+        "id": 1
+      },
+      {
+        "key": "2015-01-26",
+        "type": "GET /*-dailyView",
+        "value": 130,
+        "createdAt": "2015-01-26T14:28:41.373Z",
+        "updatedAt": "2015-01-26T14:36:30.504Z",
+        "id": 2
+      }
+    ],
+    "user": [
+      {
+        "name": "JuneWang",
+        "email": "379653734@qq.com",
+        "password": "âó6;§Îs5KöÐP2\b=Ñ",
+        "createdAt": "2015-01-22T15:33:58.335Z",
+        "updatedAt": "2015-01-22T15:33:58.340Z",
+        "id": 1,
+        "roles": [
+          "admin"
+        ]
+      }
+    ],
+    "post": [],
+    "category": [
+      {
+        "createdAt": "2015-01-22T15:38:51.075Z",
+        "updatedAt": "2015-01-22T15:38:51.075Z",
+        "id": 1
+      },
+      {
+        "name": "容易受伤的女人",
+        "createdAt": "2015-01-22T15:39:36.732Z",
+        "updatedAt": "2015-01-22T15:39:36.732Z",
+        "id": 2
+      }
+    ],
+    "media": []
+  },
+  "schema": {
+    "role": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "rule": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "statistic": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "user": {
+      "name": {
+        "type": "string",
+        "unique": true
+      },
+      "password": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string",
+        "unique": true
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "post": {
+      "title": {
+        "type": "string"
+      },
+      "content": {
+        "type": "string"
+      },
+      "category": {
+        "type": "array"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "category": {
+      "name": {
+        "type": "string"
+      },
+      "nodes": {
+        "type": "json"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "media": {
+      "name": {
+        "type": "string"
+      },
+      "originalname": {
+        "type": "string"
+      },
+      "mimetype": {
+        "type": "string"
+      },
+      "extension": {
+        "type": "string"
+      },
+      "size": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "role": {},
+    "rule": {},
+    "statistic": {
+      "id": 2
+    },
+    "user": {
+      "id": 1
+    },
+    "post": {},
+    "category": {
+      "id": 2
+    },
+    "media": {}
+  }
+}
